@@ -1,0 +1,13 @@
+fastapi
+uvicorn
+polars
+duckdb
+loguru
+rich
+textual
+typer
+pydantic
+pytest
+requests
+boto3
+snowflake-connector-python
