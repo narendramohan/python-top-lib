@@ -1,6 +1,6 @@
 """API models used by FastAPI endpoints."""
 
-from pydantic import BaseModel, Field, EmailStr
+from pydantic import BaseModel, EmailStr, Field
 
 
 class Record(BaseModel):

@@ -1,11 +1,13 @@
 """Helper functions for interacting with AWS S3."""
 
+from pathlib import Path
+
 import boto3
 from botocore.exceptions import BotoCoreError, NoCredentialsError
-from core.config import settings
-from core.logger import get_logger
-from core.utils import ensure_dir
-from pathlib import Path
+
+from ..core.config import settings
+from ..core.logger import get_logger
+from ..core.utils import ensure_dir
 
 logger = get_logger()
 
@@ -13,7 +15,9 @@ logger = get_logger()
 def get_s3_client() -> boto3.client:
     """Create and return a boto3 S3 client using configured credentials."""
     if not settings.aws_access_key_id or not settings.aws_secret_access_key:
-        raise RuntimeError("AWS credentials are not configured. Please set aws_access_key_id and aws_secret_access_key in your .env file.")
+        raise RuntimeError(
+            "AWS credentials are not configured. Please set aws_access_key_id and aws_secret_access_key in your .env file."
+        )
 
     return boto3.client(
         "s3",

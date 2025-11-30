@@ -1,9 +1,9 @@
 """Top-level ETL runner function."""
 
-from core.logger import get_logger
+from ..core.logger import get_logger
 from .extract import extract_local
-from .transform import filter_adults
 from .load import load_parquet
+from .transform import filter_adults
 
 logger = get_logger()
 

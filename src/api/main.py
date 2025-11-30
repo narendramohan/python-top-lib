@@ -1,7 +1,8 @@
 """FastAPI application entry point."""
 
 from fastapi import FastAPI
-from api.routers.validate import router as validate_router
+
+from .routers.validate import router as validate_router
 
 app = FastAPI(
     title="Enterprise Data Platform API",

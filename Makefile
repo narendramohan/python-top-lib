@@ -1,14 +1,23 @@
 install:
-	pip install -r requirements.txt
+	uv sync
 
 run-api:
-	uvicorn src.api.main:app --reload
+	uv run -m uvicorn src.api.main:app --reload
 
 run-cli:
-	python src/cli/app.py
+	uv run -m src.cli.app
 
 run-dashboard:
-	python src/ui/dashboard.py
+	uv run -m src.ui.dashboard
 
 test:
-	pytest -q
+	uv run pytest -q
+
+lint:
+	uv run ruff check .
+
+format:
+	uv run black .
+
+type-check:
+	uv run mypy src

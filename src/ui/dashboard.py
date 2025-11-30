@@ -1,9 +1,10 @@
 """Terminal dashboard using Textual."""
 
 from textual.app import App, ComposeResult
-from textual.widgets import Header, Footer, Static
 from textual.containers import Container
-from core.logger import get_logger
+from textual.widgets import Footer, Header, Static
+
+from ..core.logger import get_logger
 
 logger = get_logger()
 

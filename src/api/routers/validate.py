@@ -1,9 +1,10 @@
 """API router providing a CSV validation endpoint."""
 
-from fastapi import APIRouter, UploadFile
 import polars as pl
-from api.models import Record
-from core.logger import get_logger
+from fastapi import APIRouter, UploadFile
+
+from ...core.logger import get_logger
+from ..models import Record
 
 router = APIRouter(prefix="/validate", tags=["validate"])
 logger = get_logger()

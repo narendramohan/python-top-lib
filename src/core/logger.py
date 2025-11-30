@@ -1,15 +1,18 @@
 """Centralised logging configuration using Loguru and Rich."""
 
+import sys
+
 from loguru import logger
 from rich.console import Console
 from rich.traceback import install
+
 from .config import settings
-import sys
 
 console = Console()
 
 # Install Rich traceback handler for better error formatting
 install(show_locals=True)
+
 
 def configure_logger() -> None:
     """Configure the global Loguru logger.

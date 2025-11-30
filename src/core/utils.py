@@ -1,6 +1,5 @@
 """Utility functions used throughout the project."""
 
-import os
 from pathlib import Path
 from typing import Union
 

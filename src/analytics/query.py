@@ -1,7 +1,8 @@
 """Analytics functions leveraging DuckDB for ad‑hoc SQL queries."""
 
 import duckdb
-from core.logger import get_logger
+
+from ..core.logger import get_logger
 
 logger = get_logger()
 

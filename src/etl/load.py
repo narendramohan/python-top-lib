@@ -1,8 +1,9 @@
 """Load functions for the ETL pipeline."""
 
 import polars as pl
-from core.config import settings
-from core.logger import get_logger
+
+from ..core.config import settings
+from ..core.logger import get_logger
 from .snowflake import load_parquet_to_snowflake
 
 logger = get_logger()

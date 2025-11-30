@@ -4,9 +4,10 @@ This module applies the defined rules in `dq.rules` to a dataset and reports the
 """
 
 import polars as pl
+
+from ..core.config import settings
+from ..core.logger import get_logger
 from .rules import RULES
-from core.logger import get_logger
-from core.config import settings
 
 logger = get_logger()
 

@@ -17,10 +17,21 @@ This project provides a complete data engineering template designed for producti
 
 ## Getting started
 
-1. Create a virtual environment and install dependencies:
+### Prerequisites
+
+Install [uv](https://github.com/astral-sh/uv) - the fast Python package manager:
 
 ```sh
-pip install -r requirements.txt
+curl -LsSf https://astral.sh/uv/install.sh | sh
+```
+
+### Installation & Setup
+
+1. Install dependencies and create virtual environment:
+
+```sh
+make install
+# or: uv sync
 ```
 
 2. Copy `.env.example` to `.env` and fill out your configuration.  You need AWS credentials (access key, secret key, region) and Snowflake credentials (account, user, password, role, warehouse, database, schema).
@@ -45,6 +56,17 @@ make run-dashboard
 ```
 
 6. Start the browser app (Pyodide) by opening `src/browser/index.html` in a browser.
+
+### Development
+
+Run linting, formatting, and type checking:
+
+```sh
+make lint       # Run ruff linter
+make format     # Format with black
+make type-check # Run mypy type checker
+make test       # Run pytest
+```
 
 ## AWS S3 integration
 

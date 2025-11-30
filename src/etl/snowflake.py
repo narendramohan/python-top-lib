@@ -1,18 +1,26 @@
 """Snowflake loader utilities."""
 
-import os
 import snowflake.connector
-from snowflake.connector.pandas_tools import write_pandas
-from core.config import settings
-from core.logger import get_logger
+
+from ..core.config import settings
+from ..core.logger import get_logger
 
 logger = get_logger()
 
 
 def get_snowflake_connection() -> snowflake.connector.SnowflakeConnection:
     """Create a connection to Snowflake using configured credentials."""
-    if not (settings.snowflake_account and settings.snowflake_user and settings.snowflake_password and settings.snowflake_warehouse and settings.snowflake_database and settings.snowflake_schema):
-        raise RuntimeError("Snowflake credentials are incomplete. Please set them in your .env file.")
+    if not (
+        settings.snowflake_account
+        and settings.snowflake_user
+        and settings.snowflake_password
+        and settings.snowflake_warehouse
+        and settings.snowflake_database
+        and settings.snowflake_schema
+    ):
+        raise RuntimeError(
+            "Snowflake credentials are incomplete. Please set them in your .env file."
+        )
 
     ctx = snowflake.connector.connect(
         account=settings.snowflake_account,

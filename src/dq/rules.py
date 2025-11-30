@@ -5,6 +5,7 @@ Each rule is a callable that accepts a Polars DataFrame and returns a Boolean ma
 
 import polars as pl
 
+
 # Define rules as functions returning boolean series
 def email_not_null(df: pl.DataFrame) -> pl.Series:
     return df["email"].is_not_null()

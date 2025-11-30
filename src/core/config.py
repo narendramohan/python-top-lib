@@ -1,4 +1,5 @@
-from pydantic import BaseSettings, Field
+from pydantic import Field
+from pydantic_settings import BaseSettings
 
 
 class Settings(BaseSettings):
@@ -23,7 +24,9 @@ class Settings(BaseSettings):
     # AWS S3 configuration
     aws_access_key_id: str | None = Field(default=None, description="AWS access key ID")
     aws_secret_access_key: str | None = Field(default=None, description="AWS secret access key")
-    aws_session_token: str | None = Field(default=None, description="AWS session token if using STS")
+    aws_session_token: str | None = Field(
+        default=None, description="AWS session token if using STS"
+    )
     aws_region: str | None = Field(default=None, description="AWS region")
     s3_bucket: str | None = Field(default=None, description="Default S3 bucket name")
 
@@ -36,9 +39,7 @@ class Settings(BaseSettings):
     snowflake_database: str | None = Field(default=None, description="Snowflake database")
     snowflake_schema: str | None = Field(default=None, description="Snowflake schema")
 
-    class Config:
-        env_file = ".env"
-        env_file_encoding = "utf-8"
+    model_config = {"env_file": ".env", "env_file_encoding": "utf-8"}
 
 
 settings = Settings()
