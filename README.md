@@ -75,3 +75,38 @@ The `src/etl/s3.py` module provides functions to download files from S3 using `b
 ## Snowflake integration
 
 The `src/etl/snowflake.py` module implements a simple loader that writes a Parquet file into a Snowflake table using the Python connector's `PUT` and `COPY INTO` commands.  Use the CLI command `snowflake-load` to upload a processed Parquet file into Snowflake.  Connection parameters are configured via the `.env` file.
+
+
+Test Suite Summary (17 Tests Total)
+test_api.py (7 tests) 🔗
+Tests for FastAPI endpoints and Pydantic models:
+
+✅ test_health_endpoint - Health check endpoint
+✅ test_record_model_valid - Valid Record model creation
+✅ test_record_model_invalid_id - ID validation (must be > 0)
+✅ test_record_model_invalid_age - Age validation (0 < age < 120)
+✅ test_record_model_invalid_email - Email format validation
+✅ test_validate_endpoint_valid_csv - CSV validation with valid data
+✅ test_validate_endpoint_invalid_csv - CSV validation error handling
+test_dq.py (5 tests) ✨
+Tests for data quality rules and checks:
+
+✅ test_email_not_null_rule - Null email detection
+✅ test_age_valid_rule - Age range validation (0 < age < 120)
+✅ test_age_valid_boundary - Boundary conditions
+✅ test_rules_dictionary - Rule registry validation
+✅ test_rules_applied_to_dataset - Complete rule application workflow
+test_etl.py (5 tests) 🔄
+Tests for ETL transformation functions:
+
+✅ test_filter_adults_basic - Basic adult filtering (age > 18)
+✅ test_filter_adults_all_adults - All rows are adults
+✅ test_filter_adults_no_adults - No rows are adults
+✅ test_filter_adults_edge_case_18 - Boundary condition at age 18
+✅ test_filter_adults_preserves_columns - Column preservation
+Key Changes
+✅ Added httpx>=0.24.0 to dev dependencies for FastAPI TestClient
+✅ All tests follow best practices with clear docstrings
+✅ Edge cases and boundary conditions covered
+✅ Comprehensive error handling tests
+✅ 100% pass rate: 17/17 tests passing

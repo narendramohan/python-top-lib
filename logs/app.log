@@ -1,0 +1,8 @@
+2025-11-30 06:21:55.086 | INFO     | src.api.routers.validate:validate:29 - Validated 2 rows with 0 errors
+2025-11-30 06:21:55.093 | INFO     | src.api.routers.validate:validate:29 - Validated 2 rows with 1 errors
+2025-11-30 06:22:11.650 | INFO     | src.api.routers.validate:validate:29 - Validated 2 rows with 0 errors
+2025-11-30 06:22:11.654 | INFO     | src.api.routers.validate:validate:29 - Validated 2 rows with 1 errors
+2025-11-30 06:22:17.825 | INFO     | src.api.routers.validate:validate:29 - Validated 2 rows with 0 errors
+2025-11-30 06:22:17.830 | INFO     | src.api.routers.validate:validate:29 - Validated 2 rows with 1 errors
+2025-11-30 06:22:21.561 | INFO     | src.api.routers.validate:validate:29 - Validated 2 rows with 0 errors
+2025-11-30 06:22:21.570 | INFO     | src.api.routers.validate:validate:29 - Validated 2 rows with 1 errors
